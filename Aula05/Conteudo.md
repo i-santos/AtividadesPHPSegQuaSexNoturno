@@ -92,11 +92,8 @@ O código acima gera a seguinte página:
 <fieldset>
 
 <h3>Acessando os valores das variáveis</h3>
-
 <p>Nome: Linus Torvalds</p>
-
 <p>Idade: 49</p>
-
 </fieldset>
 
 
@@ -109,7 +106,7 @@ O código acima gera a seguinte página:
 
 
 
-Nós, humanos, conseguimos identificador a **semântica dos valores** que utilizamos no cotidiano.
+Nós, humanos, conseguimos identificar a **semântica dos valores** que utilizamos no cotidiano.
 
 Por exemplo: 
 
@@ -121,7 +118,7 @@ Por exemplo:
 
 Porém, o computador é incapaz de **entender a semântica dos valores**. No computador, tudo é armazenado em ***bits*** (0 ou 1).
 
-Portanto, é função do desenvolver prover **semântica aos valores** de um sistema.
+Portanto, é função do desenvolvedor prover **semântica aos valores** de um sistema.
 
 
 
@@ -131,7 +128,7 @@ Veja abaixo alguns tipos de valores no PHP:
 
 | Tipo     | Semântica                                                    |
 | -------- | ------------------------------------------------------------ |
-| *string* | Representa um valor composto por um conjuntos de caracteres alfanuméricos (algarismos, letras, símbolos) |
+| *string* | Representa um valor composto por um conjunto de caracteres alfanuméricos (algarismos, letras, símbolos) |
 | *int*    | Representa um valor numérico e inteiro                       |
 | *float*  | Representa um valor numérico real (números inteiros e números fracionários) |
 
@@ -153,9 +150,9 @@ $email = "php@php.com" // para strings, é preciso colocar o conjunto de caracte
 
 :fire: **Importante**:
 
-Os valores de tipo *string* precisam **obrigatoriamente** estarem envoltos a aspas.
+Os valores de tipo *string* precisam **obrigatoriamente** estar envoltos a aspas.
 
-Já os valores numéricos **não podem, obrigatoriamente,** estarem envolto a aspas.
+Já os valores numéricos **não podem, obrigatoriamente,** estar envolto a aspas.
 
 Isto é, **todo valor que está entre aspas** é considerado do tipo *string*.
 

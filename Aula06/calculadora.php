@@ -1,28 +1,18 @@
 <?php
+$method = $_SERVER["REQUEST_METHOD"];
 
-// Parte 1
-$soma = 10 + 5;
-$sub = 10 - 5;
-$mult = 10 * 5;
-$div = 10 / 5;
+$ehPost = $method == "POST";
 
-// Parte 2: usando variáveis
-$num1 = 10;
-$num2 = 5;
+if ($ehPost) {
 
-$soma = $num1 + $num2;
-$sub = $num1 + $num2;
-$mult = $num1 + $num2;
-$div = $num1 + $num2;
+    $num1 = $_POST["num1"];
+    $num2 = $_POST["num2"];
 
-// Parte 3: usando entrada do usuário
-$num1 = isset($_GET["num1"]) ? $_GET["num1"] : 0;
-$num2 = isset($_GET["num2"]) ? $_GET["num2"] : 0;
-
-$soma   = $num1 + $num2;
-$sub    = $num1 - $num2;
-$mult   = $num1 * $num2;
-$div    = $num1 / $num2;
+    $soma = $num1 + $num2;
+    $sub = $num1 - $num2;
+    $mult = $num1 * $num2;
+    $div = $num1 / $num2;
+}
 
 ?>
 
@@ -34,22 +24,17 @@ $div    = $num1 / $num2;
 </head>
 <body>
 	<h1>Calculadora</h1>
-	<form action="calculadora.php">
-		<fieldset>
-			<legend>Calculadora</legend>
-			<p>
-				<label for="num1">Número 1: </label> <input type="number"
-					name="num1" />
-			</p>
-			<p>
-				<label for="num2">Número 2: </label> <input type="number"
-					name="num2" />
-			</p>
-			<input type="submit" value="Calcular" />
-		</fieldset>
+	<form action="" method="post">
+		<p>
+			<label>Número 1: </label> <input name="num1" />
+		</p>
+		<p>
+			<label>Número 2: </label> <input name="num2" />
+		</p>
+		<input type="submit" value="Calcular" />
 	</form>
 
-
+	<?php if($ehPost) { ?>
 	<p>Número 1: <?php echo $num1; ?></p>
 	<p>Número 2: <?php echo $num2; ?></p>
 
@@ -57,5 +42,6 @@ $div    = $num1 / $num2;
 	<p>Sub 	= <?php echo $sub; ?></p>
 	<p>Mult = <?php echo $mult; ?></p>
 	<p>Div 	= <?php echo $div; ?></p>
+	<?php } ?>
 </body>
 </html>
