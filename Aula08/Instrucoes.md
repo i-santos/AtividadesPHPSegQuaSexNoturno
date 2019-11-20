@@ -31,7 +31,7 @@
 4. Criar um *link* na página `atividade2.html` para acessar a página `tipo_do_valor.php`
 5. Na página `tipo_do_valor.php` escreva um programa para seguir a seguinte lógica:
    1. Se o método utilizado para acessar a página `tipo_do_valor.php` for o `GET`, envie uma página HTML de resposta que contém um `<form>` com um `<input>` e que utiliza o método `POST` para enviar os dados. Esse `<input>` vai receber um valor do usuário, que enviará esse valor ao clicar no botão de `submit`
-   2. Se o método utilizado para acessar a página for o `POST`, escreva um código para enviar uma página de resposta informando o **tipo** do valor que foi enviado pelo usuário (`int`, `string`, `float`, etc.)
+   2. Se o método utilizado para acessar a página for o `POST`, escreva um código para enviar uma página de resposta informando se o valor que foi enviado pelo usuário **é numérico ou não**.
 
 
 
@@ -55,12 +55,6 @@
 
 ```php+HTML
 is_numeric( $var ) // se o valor da variável $var for numérico, retorna true. Caso contrário, retorna false
-
-is_int( $var ) // se o valor da variável $var for int, retorna true. Caso contrário, retorna false
-
-is_string( $var ) // se o valor da variável $var for string, retorna true. Caso contrário, retorna false
-
-is_float( $var ) // se o valor da variável $var for float, retorna true. Caso contrário, retorna false
 
 rand( $minimo, $maximo ) // retorna um valor entre os valores das variáveis $minimo e $maximo
 
