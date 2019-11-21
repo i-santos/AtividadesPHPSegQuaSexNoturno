@@ -55,14 +55,6 @@
 
 
 
-### Atividade 4: Bingo
-
-1. Criar o arquivo `bingo.php`
-2. Criar um *link* na página `index.html` da pasta da Aula para acessar a página `bingo.php`
-3. A página `bingo.php` vai ter 
-
-
-
 ### Estruturas para fazer os códigos acima
 
 ```php+HTML
