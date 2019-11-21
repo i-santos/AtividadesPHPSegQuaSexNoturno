@@ -5,7 +5,12 @@ if( $method == "POST" ) {
 
 	$min = $_POST["min"];
 	$max = $_POST["max"];
+	$nDados = $_POST["nDados"];
 
+	$results = array();
+	
+	
+	
 	$num = rand($min, $max);
 
 	$historico = array_filter( explode(", ", $_POST["historico"]) );
