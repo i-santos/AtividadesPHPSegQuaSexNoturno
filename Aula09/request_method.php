@@ -1,9 +1,6 @@
 <?php 
-// Variáveis Super Globais
+
 $method = $_SERVER["REQUEST_METHOD"];
-
-$ehGet = $method == "GET";
-
 
 ?>
 <!DOCTYPE html>
@@ -14,20 +11,12 @@ $ehGet = $method == "GET";
 </head>
 <body>
 
-	<?php if( $ehGet ) { ?>
+	<?php if ($method == "GET") { ?>
 	
-		<h1>Título da página</h1>
-		<p>Bem-vindo</p>
-		
-		<form>
-		
-		</form>
-		
-	
+		<h1>Bem-vindo!</h1>
 	<?php } else { ?>
-	
-		<p>Request feito com sucesso!</p>
-	
-	 <?php } ?>
+		<h1>Request feito com sucesso</h1>
+	<?php } ?>
+
 </body>
 </html>
