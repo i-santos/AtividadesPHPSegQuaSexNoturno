@@ -42,9 +42,7 @@ if ($method == "POST") {
 	<?php for($i = 0; $i < $dados; $i++) { ?>
 
 	<h3>
-	<?php $resultado = rand($minimo, $maximo);
-	echo $resultado;
-	?>
+	<?php echo rand($minimo, $maximo);	?>
 	</h3>
 
 	<?php } ?>

@@ -1,7 +1,7 @@
-# Aula 09 - Atividades
+# Aula 11 - Atividades
 
-- Criar uma pasta `Aula09` no projeto `AtividadesPHP`
-- Criar `index.html` na pasta Aula09
+- Criar uma pasta `Aula11` no projeto `AtividadesPHP`
+- Criar `index.html` na pasta Aula11
 - Fazer as atividades abaixo
 
 ### Atividade: Lançador de vários dados
@@ -51,21 +51,4 @@
 
 
 
----
-
-
-
-### Estruturas para fazer os códigos acima
-
-```php+HTML
-is_numeric( $var ) // se o valor da variável $var for numérico, retorna true. Caso contrário, retorna false
-
-rand( $minimo, $maximo ) // retorna um valor entre os valores das variáveis $minimo e $maximo
-
-$_SERVER["REQUEST_METHOD"] // retorna o método do request ("GET" ou "POST")
-
-$_GET["chave"] // retorna o valor que o usuário inseriu no input com name="chave"
-
-$_POST["chave"] // retorna o valor que o usuário inseriu no input com name="chave" (quando o form é configurado para usar o método POST)
-```
 
