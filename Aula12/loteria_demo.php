@@ -15,13 +15,10 @@ if($method == "POST") {
 		$contador = 0;
 		for($existe = true; $existe == true; $contador++) {
 			$dezena = rand($minimo, $maximo);
-			echo "[$contador] Sorteio = $dezena<br>";
 			
-			$search = array_search($dezena, $array_dezenas);
-			echo " - " . ($search ? "true<br>" : "false<br>");
-			if(!$search) {
+			// CORREÇÃO: ao invés de usar 'array_search', usar 'in_array' para procurar um valor em um array
+			if (in_array($dezena, $array_dezenas) == false) {
 				$existe = false;
-				echo "Adicionando: $dezena <br>";
 				$array_dezenas[] = $dezena;
 			}
 		}
