@@ -12,8 +12,7 @@ if($method == "POST") {
 	
 	for($i = 0; $i < $nDezenas; $i++) {
 		
-		$contador = 0;
-		for($existe = true; $existe == true; $contador++) {
+		for($existe = true; $existe == true; ) {
 			$dezena = rand($minimo, $maximo);
 			
 			// CORREÇÃO: ao invés de usar 'array_search', usar 'in_array' para procurar um valor em um array
