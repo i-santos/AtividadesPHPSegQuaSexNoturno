@@ -5,7 +5,6 @@ if ( isset($_SESSION["lista"]) == false ) {
 }
 $lista = $_SESSION["lista"];
 
-echo print_r($lista);
 ?>
 <!DOCTYPE html>
 <html>
