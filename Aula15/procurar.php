@@ -14,6 +14,9 @@ if ($method == "POST") {
 	
 	$email = $_POST["email"];
 	
+	// Lógica para procurar o usuário na lista
+	// Se o usuário estiver cadastrado, precisaremos referenciar esse usuário específico
+	//		na sessão
 	$uPerfil = NULL;
 	$emailCadastrado = false;
 	foreach ($lista as $u) {
@@ -26,6 +29,7 @@ if ($method == "POST") {
 		
 	}
 	
+	// Verifica se o usuário realmente está cadastrado
 	if ($emailCadastrado) {
 		$_SESSION["uPerfil"] = $uPerfil;
 		header("Location: perfil.php");

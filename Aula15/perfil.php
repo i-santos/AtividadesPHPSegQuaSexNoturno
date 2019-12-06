@@ -18,6 +18,7 @@ if ($method == "POST") {
 
 	$lista = $_SESSION["lista"];
 
+	// Lógica para atualizar os dados
 	for ($i = 0; $i < count($lista); $i++ ) {
 		
 		if ( $lista[$i]["email"] == $emailAntigo) {
@@ -25,6 +26,7 @@ if ($method == "POST") {
 			$lista[$i]["senha"] = $senha;
 			$uPerfil["email"] = $email;
 			$uPerfil["senha"] = $senha;
+			$mensagem = "* Dados salvos com sucesso";
 			break;
 		}
 	}
@@ -33,9 +35,6 @@ if ($method == "POST") {
 	$_SESSION["uPerfil"] = $uPerfil;
 
 }
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -59,6 +58,9 @@ if ($method == "POST") {
 		</p>
 		<input type="submit" value="Salvar" />
 	</form>
+	<?php if( isset($mensagem) ) { ?>
+	<p><?php echo $mensagem; ?></p>
+	<?php } ?>
 
 </body>
 </html>

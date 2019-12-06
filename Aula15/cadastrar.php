@@ -21,6 +21,7 @@ if ($method == "POST") {
 	$usuario["email"] = $email;
 	$usuario["senha"] = $senha;
 
+	// Lógica para verificar se email já está cadastrado
 	$emailCadastrado = false;
 	foreach ($lista as $u) {
 
@@ -31,6 +32,7 @@ if ($method == "POST") {
 
 	}
 
+	// Verifica, após a lógica, se email não está cadastrado
 	if ($emailCadastrado == false) {
 		$lista[] = $usuario;
 		$_SESSION["lista"] = $lista;

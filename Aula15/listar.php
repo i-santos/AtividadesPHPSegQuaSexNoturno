@@ -1,9 +1,11 @@
-<?php 
+<?php
 session_start();
 if ( isset($_SESSION["lista"]) == false ) {
 	$_SESSION["lista"] = array();
 }
 $lista = $_SESSION["lista"];
+
+echo print_r($lista);
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,25 +14,24 @@ $lista = $_SESSION["lista"];
 <title>Listar | Usuários</title>
 </head>
 <body>
-<a href="usuarios.php">Voltar</a>
-<h1>Usuários cadastrados</h1>
-<table>
-	<thead>
-		<tr>
-			<td>Email</td>
-			<td>Senha</td>
-		</tr>
-	</thead>
-	<tbody>
+	<a href="usuarios.php">Voltar</a>
+	<h1>Usuários cadastrados</h1>
+	<table>
+		<thead>
+			<tr>
+				<td>Email</td>
+				<td>Senha</td>
+			</tr>
+		</thead>
+		<tbody>
 		<?php foreach ($lista as $u) { ?>
 			<tr>
 				<td><?php echo $u["email"]; ?></td>
 				<td><?php echo $u["senha"]; ?></td>
 			</tr>
-		
-		<?php } ?>
-	</tbody>
-</table>
+			<?php } ?>
+		</tbody>
+	</table>
 
 </body>
 </html>
