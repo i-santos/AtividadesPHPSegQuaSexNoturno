@@ -19,7 +19,7 @@ if ($method == "POST") {
 	$lista = $_SESSION["lista"];
 
 	// Lógica para atualizar os dados
-	for ($i = 0; $i < count($lista); $i++ ) {
+	foreach ( $lista as $i => $u) {
 		
 		if ( $lista[$i]["email"] == $emailAntigo) {
 			$lista[$i]["email"] = $email;
