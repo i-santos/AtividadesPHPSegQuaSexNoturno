@@ -25,7 +25,7 @@ if ($method == "POST") {
 	<h1>Cadastre um novo usuário</h1>
 	<form method="POST" action="cadastrar.php">
 		<p>
-			<label>E-mail: </label> <input type="email" name="email" />
+			<label>E-mail: </label> <input type="text" name="email" />
 		</p>
 		<p>
 			<label>Senha: </label> <input type="password" name="senha" />
