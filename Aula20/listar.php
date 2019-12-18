@@ -22,7 +22,7 @@ if($resultado) {
 <body>
 	<a href="usuarios.php">Voltar</a>
 	<h1>Usuários cadastrados</h1>
-	<form>
+	<form method="POST" action="remover_multi.php">
 		<table>
 			<thead>
 				<tr>
@@ -35,7 +35,7 @@ if($resultado) {
 			<tbody>
 			<?php foreach ($usuarios as $u) { ?>
 				<tr>
-					<td><input type="checkbox" /></td>
+					<td><input type="checkbox" name="ids[]" value="<?php echo $u["id"];?>" /></td>
 					<td><?php echo $u["id"]; ?></td>
 					<td><?php echo $u["email"]; ?></td>
 					<td><?php echo $u["senha"]; ?></td>
