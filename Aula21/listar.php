@@ -1,14 +1,38 @@
 <?php
-
 include('conexao.php');
+include("classes/usuario.class.php");
 
 global $link;
 
 $resultado = mysqli_query($link, "SELECT * FROM cadastro_usuarios.usuario");
 
 $usuarios = array();
-if($resultado) {
+
+/*if ($resultado) {
 	$usuarios = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+	var_dump($usuarios);
+	echo "<br><br>";
+}
+
+mysqli_data_seek($resultado, 0);
+
+$usuarios = array();*/
+if($resultado) {
+	
+	while ( $obj = mysqli_fetch_object($resultado, 'Usuario') ) {
+		$usuarios[] = $obj;
+	}
+	
+	/*while ( $linha = mysqli_fetch_row($resultado) ) {
+
+		$u = new Usuario();
+		$u->id = $linha[0];
+		$u->email = $linha[1];
+		$u->senha = $linha[2];
+		
+		$usuarios[] = $u;
+	}*/
+
 } else {
 	$mensagem = "Algo deu errado. Tente carregar a lista novamente.";
 }
@@ -36,10 +60,10 @@ if($resultado) {
 			<tbody>
 			<?php foreach ($usuarios as $u) { ?>
 				<tr>
-					<td><input type="checkbox" name="ids[]" value="<?php echo $u["id"];?>" /></td>
-					<td><?php echo $u["id"]; ?></td>
-					<td><?php echo $u["email"]; ?></td>
-					<td><?php echo $u["senha"]; ?></td>
+					<td><input type="checkbox" name="ids[]" value="<?php echo $u->id; ?>" /></td>
+					<td><?php echo $u->id; ?></td>
+					<td><?php echo $u->email; ?></td>
+					<td><?php echo $u->senha; ?></td>
 				</tr>
 				<?php } ?>
 			</tbody>
