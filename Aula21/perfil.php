@@ -1,4 +1,5 @@
 <?php 
+include("classes/usuario.class.php");
 
 session_start();
 
@@ -7,7 +8,14 @@ $u = $_SESSION["usuario"];
 $method = $_SERVER["REQUEST_METHOD"];
 
 if ($method == "POST") {
-	include("classes/usuario.class.php");
+	// ===================================== O ERRO ESTÁ AQUI ===================
+	// Eu fiz o include do arquivo da classe usuario dentro desse if
+	// Por causa disso, a classe só estava sendo incluida no método POST
+	// Ao acessar a página com o método GET, o include não estava sendo executado
+	// Para consertar, basta colocar esse include no início da página (logo
+	//	na primeira linha de código)
+	//===========================================================================
+	include('classes/usuario.class.php');
 	
 	$senha = $_POST["senha"];
 	//$u["senha"] = $senha;
