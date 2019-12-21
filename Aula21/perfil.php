@@ -1,5 +1,5 @@
 <?php 
-include("classes/usuario.class.php");
+include('classes/usuario.class.php');
 
 session_start();
 
@@ -15,7 +15,7 @@ if ($method == "POST") {
 	// Para consertar, basta colocar esse include no início da página (logo
 	//	na primeira linha de código)
 	//===========================================================================
-	include('classes/usuario.class.php');
+	//include('classes/usuario.class.php');
 	
 	$senha = $_POST["senha"];
 	//$u["senha"] = $senha;
