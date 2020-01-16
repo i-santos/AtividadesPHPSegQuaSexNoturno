@@ -6,21 +6,26 @@ global $link;
 
 session_start();
 
+// Verificar se usuário está logado
 if (isset($_SESSION["usuarioLogado"])) {
 
     $usuario = $_SESSION["usuarioLogado"];
+}
+
+// Ver se existe mensagem após finalizar tarefa
+if (isset($_SESSION['msgFinalizar'])) {
     
-} else {
-    
-    header("Location: index.php");
-    exit();
-    
+    $msgFinalizar = $_SESSION['msgFinalizar'];
+    unset($_SESSION["msgFinalizar"]);
+}
+
+// Ver se existe mensagem após excluir tarefa
+if (isset($_GET["msgExcluir"])) {    
+    $msgExcluir = $_GET["msgExcluir"];
 }
 
 $method = $_SERVER["REQUEST_METHOD"];
 
-// Se o método for POST, então precisamos fazer o processamento
-//  da adição de uma nova tarefa
 if ($method == "POST") {
 
     $titulo = $_POST["titulo"];
@@ -60,11 +65,15 @@ if ($resultado) {
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home | Lista de Tarefas</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<a href="logout.php">Logout</a>
-	<a>Usuário online: <?php echo $usuario->email; ?></a>
+	<?php if ( isset($usuario)) {?>
+		<a>Usuário online: <?php echo $usuario->email; ?></a>
+	<?php } else {?>
+		<a>Usuário offline</a>
+	<?php } ?>
 	<h1>Home</h1>
 	<fieldset>
 		<legend>Adicionar Tarefa</legend>
@@ -80,6 +89,13 @@ if ($resultado) {
 	</fieldset>
 
 	<h2>Suas tarefas</h2>
+	<?php if(isset($msgFinalizar)) {?>
+		<h6><?php echo $msgFinalizar; ?></h6>
+	<?php } ?>	
+	<?php if(isset($msgExcluir)) {?>
+		<h6><?php echo $msgExcluir; ?></h6>
+	<?php } ?>
+	
 	<?php foreach ($tarefas as $t) {?>
 	
 		<p><?php echo $t->titulo; ?> 
@@ -92,6 +108,8 @@ if ($resultado) {
             }
         ?>
 		)
+		<a href="finalizar.php?id=<?php echo $t->id; ?>">Finalizar</a>
+		<a href="excluir.php?id=<?php echo $t->id; ?>">Excluir</a>
 		</p>
 		
 	<?php }?>
